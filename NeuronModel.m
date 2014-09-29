@@ -14,6 +14,7 @@ E_Na = 115; % ^^
 E_L = 10.6; % ^^
 C_m = 1; %Membrane cap
 I(1:totalsteps) = 10; %Membrane Current, microAmps/cm^2
+
 % You can specify other currents here.
 % A .5 ms pulse of 5 uA/cm^2 would be I(101:150) = 5; At 1ms, it would
 % pulse for .5ms given the simulation is 100ms long with a step of .01 ms
@@ -68,12 +69,12 @@ end
 
 
 % Plot Voltage vs time
-plot(t,V_m-70)
-axis([0 100 -100 50])
-xlabel 'Time (ms)'
+plot(t,V_m-70)  % Plot the Y values (V_m) at times t.
+axis([0 100 -100 50]) % Set the viewing min, max on x and y axis
+xlabel 'Time (ms)' % Label axis
 ylabel 'Voltage (mV)'
-title 'Neuron Voltage vs Time'
-legend 'Voltage'
+title 'Membrane Potential' % Plot title
+legend 'Voltage' % Legend 
 
 % Plotting conductances
 % The equations for conductance come from the paper
@@ -83,6 +84,6 @@ figure
 hold on
 plot(t,g_K, t, g_Na)
 xlabel 'Time (ms)'
-ylabel 'Conductance'
-title 'Ion conductance vs Time'
-legend('g_K', 'g_{Na}') %Matlab interprets LaTex here.
+ylabel('Conductance S / cm^2')
+title 'Conductance'
+legend('g_K', 'g_{Na}') %Matlab interprets TeX here.

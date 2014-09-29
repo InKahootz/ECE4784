@@ -84,6 +84,6 @@ figure
 hold on
 plot(t,g_K, t, g_Na)
 xlabel 'Time (ms)'
-ylabel('Conductance S / cm^2')
+ylabel('Conductance (mS / cm^2)')
 title 'Conductance'
 legend('g_K', 'g_{Na}') %Matlab interprets TeX here.
